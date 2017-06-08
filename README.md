@@ -1,26 +1,40 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Ionic-3D-Card-Carousel
 
-## How to use this template
+Sample project that shows an experimental 3D card carousel in Ionic.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+* FrontEnd: Ionic App.
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+## Running
 
-### With the Ionic CLI:
+Before you go through this example, you should have at least a basic understanding of Ionic concepts. You must also already have Ionic installed on your machine.
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
+* Test in localhost:
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+npm install
+ionic serve
 ```
 
-Substitute ios for android if not on a Mac.
+![App example](readme_resources/app.gif "App example")
+
+* Test in Android: 
+
+```bash
+ionic cordova add platform android
+ionic cordova run android
+```
+
+* Test in iOS: 
+
+```bash
+ionic cordova add platform ios
+ionic cordova run ios
+```
+
+## Requirements
+
+* [Node.js](http://nodejs.org/)
+* [Ionic Cordova](https://ionicframework.com/docs/intro/installation/)
+
+
 
