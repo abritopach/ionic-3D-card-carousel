@@ -45,11 +45,9 @@ export class CarouselComponent {
         let degree: number = 0;
 
         if(this.platform.is('core') || this.platform.is('mobileweb')) {
-            console.log("Browser");
             this.tz = 250;
 
         } else {
-            console.log("Mobile");
             this.tz = 200;
         }
 
@@ -74,7 +72,6 @@ export class CarouselComponent {
 
 
     constructor(public platform: Platform, private eleRef: ElementRef) {
-        console.log('Hello CarouselComponent Component');
     }
 
     onSwipeLeft() {
@@ -97,34 +94,45 @@ export class CarouselComponent {
 
     selectItem(item:any) {
 
-        //console.log(item);
+        this.applyResizeStyle(item);
+
+        setTimeout(() => {
+            this.resetResizeStyle(item);
+            this.selectSlide.emit(item);
+        },2000);
+    }
+
+    applyResizeStyle(item: any) {
 
         let ele = this.eleRef.nativeElement.querySelector('.slide-item-' + item.idx);
+
+        ele.style[ 'animation-name' ] = "resize";
+        ele.style[ 'animation-duration' ] = "1s";
+        ele.style[ 'animation-timing-function' ] = "ease-in-out";
+        ele.style[ 'animation-iteration-count' ] = "1";
 
         ele.style[ '-webkit-animation-name' ] = "resize";
         ele.style[ '-webkit-animation-duration' ] = "1s";
         ele.style[ '-webkit-animation-timing-function' ] = "ease-in-out";
         ele.style[ '-webkit-animation-iteration-count' ] = "1";
 
-        /*
-        ele.style[ 'width' ] = "100%";
-        ele.style[ '-webkit-transition' ] = "width 300ms ease-in-out, height 300ms ease-in-out";
-        ele.style[ '-moz-transition' ] = "width 300ms ease-in-out, height 300ms ease-in-out";
-        ele.style[ '-o-transition' ] = "300ms ease-in-out, height 300ms ease-in-out";
-        ele.style[ 'transition' ] = "300ms ease-in-out, height 300ms ease-in-out";
-        */
+        ele.style[ '-moz-animation-name' ] = "resize";
+        ele.style[ '-moz-animation-duration' ] = "1s";
+        ele.style[ '-moz-animation-timing-function' ] = "ease-in-out";
+        ele.style[ '-moz-animation-iteration-count' ] = "1";
 
-        setTimeout(() => {
-            /*
-            ele.style[ 'width' ] = "200px";
-            ele.style[ '-webkit-transition' ] = "width 300ms ease-in-out, height 300ms ease-in-out";
-            ele.style[ '-moz-transition' ] = "width 300ms ease-in-out, height 300ms ease-in-out";
-            ele.style[ '-o-transition' ] = "300ms ease-in-out, height 300ms ease-in-out";
-            ele.style[ 'transition' ] = "300ms ease-in-out, height 300ms ease-in-out";
-            */
-            ele.style[ '-webkit-animation-name' ] = "";
-            this.selectSlide.emit(item);
-        },2000);
+        ele.style[ '-o-animation-name' ] = "resize";
+        ele.style[ '-o-animation-duration' ] = "1s";
+        ele.style[ '-o-animation-timing-function' ] = "ease-in-out";
+        ele.style[ '-o-animation-iteration-count' ] = "1";
+    }
+
+    resetResizeStyle(item: any) {
+        let ele = this.eleRef.nativeElement.querySelector('.slide-item-' + item.idx);
+        ele.style[ 'animation-name' ] = "";
+        ele.style[ '-webkit-animation-name' ] = "";
+        ele.style[ '-moz-animation-name' ] = "";
+        ele.style[ '-o-animation-name' ] = "";
     }
 
 }

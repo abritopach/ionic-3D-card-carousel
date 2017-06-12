@@ -20,10 +20,8 @@ export class DetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
 
     this.item = this.navParams.get('item');
-    //console.log(this.item);
   }
 
 }

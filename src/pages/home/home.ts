@@ -178,7 +178,6 @@ export class HomePage {
     }
 
   selectItem(item: any) {
-      //console.log(item);
       this.navCtrl.push(DetailsPage, {
           item: item
       });
