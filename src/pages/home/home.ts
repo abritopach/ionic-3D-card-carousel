@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 
-import { CarouselComponent } from "../../components/carousel/carousel"
 import { DetailsPage } from "../details/details";
 
 @Component({
@@ -15,7 +14,7 @@ export class HomePage {
     private start: number = 0;
     private end: number = 5;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
         this.data = [
           {
               id: 1,
@@ -25,6 +24,7 @@ export class HomePage {
               color: '#1abc9c',
               isSelected: false,
               imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'http://oxygennacdn3.oxygenna.com/wp-content/uploads/2015/11/18.jpg',
               outstanding: true
           },
           {
@@ -34,7 +34,8 @@ export class HomePage {
               country: 'Spain',
               color: '#e67e22',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://s-media-cache-ak0.pinimg.com/originals/d2/7b/4f/d27b4fa995194a0c77b8871a326a7c0b.jpg'
           },
           {
               id: 3,
@@ -44,7 +45,8 @@ export class HomePage {
               color: '#e74c3c',
               isSelected: false,
               imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
-              outstanding: true
+              outstanding: true,
+              backgroundImgUrl: 'https://i.imgur.com/AMf9X7E.jpg'
           },
           {
               id: 4,
@@ -53,7 +55,8 @@ export class HomePage {
               country: 'Spain',
               color: '#2c3e50',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'http://oxygennacdn2.oxygenna.com/wp-content/uploads/2015/06/small.jpg'
           },
           {
               id: 5,
@@ -62,7 +65,8 @@ export class HomePage {
               country: 'Spain',
               color: '#2980b9',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://newevolutiondesigns.com/images/freebies/google-material-design-wallpaper-1.jpg'
           },
           {
               id: 6,
@@ -71,7 +75,8 @@ export class HomePage {
               country: 'Spain',
               color: '#9b59b6',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://i.ytimg.com/vi/GpTrOahC6jI/maxresdefault.jpg'
           },
           {
               id: 7,
@@ -80,7 +85,8 @@ export class HomePage {
               country: 'Spain',
               color: '#1abc9c',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'http://www.templatemonsterblog.es/wp-content/uploads/2016/04/1-9-2.jpg'
           },
           {
               id: 8,
@@ -89,7 +95,8 @@ export class HomePage {
               country: 'Spain',
               color: '#e67e22',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://cms-assets.tutsplus.com/uploads/users/41/posts/25951/image/material-design-3.jpg'
           },
           {
               id: 9,
@@ -98,7 +105,8 @@ export class HomePage {
               country: 'Spain',
               color: '#e74c3c',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://cms-assets.tutsplus.com/uploads/users/41/posts/25951/image/material-design-background-1.jpg'
           },
           {
               id: 10,
@@ -107,7 +115,8 @@ export class HomePage {
               country: 'Spain',
               color: '#2c3e50',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'http://www.vactualpapers.com/web/wallpapers/1-pattern-35-color-schemes-material-design-wallpaper-series-image11/2560x1440.jpg'
           },
           {
               id: 11,
@@ -116,7 +125,8 @@ export class HomePage {
               country: 'Spain',
               color: '#2980b9',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://www.smashingmagazine.com/wp-content/uploads/2015/07/Ultimate-Material-Lollipop-Collection1.png'
           },
           {
               id: 12,
@@ -125,7 +135,8 @@ export class HomePage {
               country: 'Spain',
               color: '#9b59b6',
               isSelected: false,
-              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+              imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+              backgroundImgUrl: 'https://s-media-cache-ak0.pinimg.com/736x/c2/bd/3a/c2bd3ae483f9617e6f71bc2a74b60b5a.jpg'
           },
             {
                 id: 13,
@@ -134,7 +145,8 @@ export class HomePage {
                 country: 'Spain',
                 color: '#1abc9c',
                 isSelected: false,
-                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+                backgroundImgUrl: 'http://www.vactualpapers.com/web/wallpapers/material-design-hd-background-by-vactual-papers-wallpaper-84/thumbnail/lg.jpg'
             },
             {
                 id: 14,
@@ -143,7 +155,8 @@ export class HomePage {
                 country: 'Spain',
                 color: '#e67e22',
                 isSelected: false,
-                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+                backgroundImgUrl: 'https://ak2.picdn.net/shutterstock/videos/19300069/thumb/9.jpg'
             },
             {
                 id: 15,
@@ -152,7 +165,8 @@ export class HomePage {
                 country: 'Spain',
                 color: '#e74c3c',
                 isSelected: false,
-                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg'
+                imgUrl: 'http://www.urbanhabitat.com.ar/img/team/14.jpg',
+                backgroundImgUrl: 'http://oxygennacdn1.oxygenna.com/wp-content/uploads/2017/01/header-image-6.jpg'
             },
 
       ];
@@ -164,6 +178,13 @@ export class HomePage {
     }
 
     getCurrentSlides() {
+
+        let loading = this.loadingCtrl.create({
+            content: 'Please wait...'
+        });
+
+        loading.present();
+
         if (this.start == this.data.length) {
             this.start = 0;
             this.end = 5;
@@ -172,6 +193,9 @@ export class HomePage {
         for (var i = this.start; i <= this.end; i++) {
             this.slides.push(this.data[i]);
         }
+
+        loading.dismiss();
+
         this.start = this.end + 1;
         if ((this.start + this.end) < this.data.length) this.end = this.start + this.end;
         else this.end = this.data.length - 1;
