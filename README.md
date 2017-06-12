@@ -15,8 +15,6 @@ npm install
 ionic serve
 ```
 
-![App example](readme_resources/app.gif "App example")
-
 * Test in Android: 
 
 ```bash
@@ -30,6 +28,8 @@ ionic cordova run android
 ionic cordova add platform ios
 ionic cordova run ios
 ```
+
+![App example](readme_resources/app.gif "App example")
 
 ## Requirements
 
