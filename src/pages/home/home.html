@@ -10,5 +10,5 @@
     <ion-fab top right edge>
         <button ion-fab mini (click)="getCurrentSlides()" color="danger"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
-    <carousel [slides]="slides" (selectSlide)="selectItem($event);"></carousel>
+    <carousel [slides]="slides" [autoloop]="true" (selectSlide)="selectItem($event);"></carousel>
 </ion-content>

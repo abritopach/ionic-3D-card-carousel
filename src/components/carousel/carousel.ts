@@ -41,6 +41,7 @@ export class CarouselComponent {
     //private containerWidth: number = 250;
     private tz: number;
 
+    @Input() autoloop: boolean = false;
     @Input() set slides(values: Array<CarouselItem>) {
         if (!values.length) return;
 
@@ -75,6 +76,15 @@ export class CarouselComponent {
 
 
     constructor(public platform: Platform, private eleRef: ElementRef) {
+    }
+
+    ngOnInit() {
+        //console.log("autoloop", this.autoloop); 
+        if (this.autoloop) {
+            let autoloopTask = setInterval(() => {
+                this.onSwipeLeft();
+            }, 2000);
+        }   
     }
 
     onSwipeLeft() {
